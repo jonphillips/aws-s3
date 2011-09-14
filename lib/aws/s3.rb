@@ -6,7 +6,6 @@ require 'net/https'
 require 'time'
 require 'date'
 require 'open-uri'
-require 'xml/libxml'
 
 $:.unshift(File.dirname(__FILE__))
 require 's3/extensions'
@@ -49,7 +48,7 @@ require_library_or_gem 'xmlsimple', 'xml-simple' unless defined? XmlSimple
 # XmlSimple.
 AWS::S3::Parsing.parser =
   begin
-    require_library_or_gem 'xml/libxml'
+    require 'xml/libxml'
     # Older version of libxml aren't stable (bus error when requesting attributes that don't exist) so we
     # have to use a version greater than '0.3.8.2'.
     raise LoadError unless LibXML::XML::Parser::VERSION > '0.3.8.2'
