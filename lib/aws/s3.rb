@@ -6,6 +6,7 @@ require 'net/https'
 require 'time'
 require 'date'
 require 'open-uri'
+require 'xml/libxml'
 
 $:.unshift(File.dirname(__FILE__))
 require 's3/extensions'
